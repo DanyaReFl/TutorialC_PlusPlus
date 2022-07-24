@@ -2,6 +2,7 @@
 #include <vector>
 int main() {
 
+    bool is(false);
     int n;
     int position(0);
     std::vector<int> base(20);
@@ -13,7 +14,8 @@ int main() {
     {
         if (n==-1)
         {
-            for ( int i=position ; i<base.size() ; i++ ){
+            if (is)
+                for ( int i=position ; i<base.size() ; i++ ){
                 std::cout <<base[i]<< " ";
             }
             for ( int i(0) ; i<position ; i++ ){
@@ -26,8 +28,10 @@ int main() {
         {
             base[position] = n;
             position++;
-            if (position==20)
+            if (position==20) {
                 position = 0;
+                is=true;
+            }
 
         }
         std::cout << "Input number: " ;
