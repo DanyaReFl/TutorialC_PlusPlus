@@ -2,10 +2,10 @@
 
 
 
-bool substr(char *str , char *sub)
+bool substr(const char *str , const char *sub)
 {
     while(*str)
-    {   char* sSub = sub;
+    {   const char* sSub = sub;
         while(*str && *str != *sub) str++;
         while(*str && *sSub && *str == *sSub){str++; sSub++;}
         if(*sSub == 0) return true;
