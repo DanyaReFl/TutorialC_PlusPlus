@@ -1,13 +1,14 @@
 #include <iostream>
 #include <map>
 #include <string>
-
+#include <vector>
 
 int main() {
 
     std::string name,number;
-    int command;
-    std::map<std::string, std::string> guide;
+    int command ;
+    std::map<std::string, std::vector<std::string>> M_name;
+    std::map<std::string, std::string> M_number;
 
     std::cout << "The telephone directory program welcomes you!" << std::endl;
 
@@ -21,27 +22,24 @@ int main() {
             std::cin >> number;
             std::cout <<"Enter last name: ";
             std::cin >> name;
-            guide[number]=name;
+            M_name[name].push_back(number);
+            M_number[number]=name;
         }
         else if (command==2)
         {
             std::cout << "Enter the phone number to search: ";
             std::cin >> number;
-            std::cout << guide[number] << std::endl;
+            std::cout << M_number[number] << std::endl;
         }
         else if (command==3)
         {
             std::cout <<"Enter last name to search: ";
             std::cin >> name;
-            for (auto it : guide)
-            {
-                if (it.second==name)
-                {
-                    std::cout << it.first << std::endl;
-                }
+            for (auto it : M_name[name]){
+                std::cout <<  it << std::endl;
             }
         }
-        else  { std::cout << "Error."; break; }
+        else  { std::cout << "Error."; break; };
     }
     return 0;
 }
