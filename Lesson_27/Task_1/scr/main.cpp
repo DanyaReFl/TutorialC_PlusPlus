@@ -11,7 +11,8 @@ int main()
     branch *tree = new branch [5];
     for (int i(0) ; i<5 ; i++ )
     {
-        (tree+i)->setChildrenAndParent();
+        tree->setChildrenAndParent();
+        tree++;
     }
 
     std::cout << "Enter a name to search for the elf: " ;
@@ -19,15 +20,14 @@ int main()
 
     for (int j(0) ; j<5 ; j++ )
     {
-        branch *find = (tree + j)->findName(findName);
-        if ( find != nullptr )
+        branch *find = tree->findName(findName);
+        if ( find == nullptr )
         {
             std::cout << "Number of elf neighbors :" << find->getCount() << std::endl;
             break;
         }
+        tree++;
     }
-
-    delete []tree;
 
     return 0;
 }

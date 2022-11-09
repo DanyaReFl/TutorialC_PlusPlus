@@ -7,40 +7,40 @@ branch::branch()
     if ( ( name == "none" ) || ( name == "None" ) ) name = {""} ;
 }
 
-branch* branch::findName (std::string findName )
+branch * branch::findName (std::string findName )
 {
     for (int i(0) ; i < this->sizeBranch ; i++ )
     {
-        if (this->children->name == findName ) return this->children ;
+        if ( (this->children->name) == findName ) return this->children;
         else
         {
-            for (int j(0) ; j < this->children->children->sizeBranch ; j++ )
+            for (int j(0) ; j < (this->children->sizeBranch) ; j++ )
             {
-                if (this->children->children->name == findName ) return this->children->children ;
-                this->children->children++ ;
+                if ( (this->children->children->name) == findName ) return this->children->children ;
+                this->children->children++;
             }
         }
         this->children++ ;
     }
-    return nullptr ;
+    return (nullptr);
 }
 
 int branch::getCount ()
 {
-    if ( this->children == nullptr ) return this->parent->sizeBranch ;
+    if ( this->parent == nullptr ) return this->parent->sizeBranch ;
     else this->sizeBranch ;
 }
 
 void branch::setChildrenAndParent()
 {
     this->sizeBranch = ( rand() % 3 ) + 3 ;
-    this->children = new branch[ this->sizeBranch ] ;
-    for (int i(0); i < this->sizeBranch ; i++)
+    this->children = new branch [ this->sizeBranch ] ;
+    for (int i(0); i < (this->sizeBranch) ; i++)
     {
-        this->children->parent = nullptr ;
+        this->children->parent =  nullptr ;
         this->children->sizeBranch = ( rand() % 2 ) + 2 ;
         this->children->children = new branch [this->children->sizeBranch] ;
-        for (int k(0) ; k < this->children->sizeBranch ; k++ )
+        for (int k(0) ; k < (this->children->sizeBranch) ; k++ )
         {
             this->children->children->parent = this->children->children;
             this->children->children->children = nullptr;
