@@ -1,51 +1,110 @@
 #include "header.h"
 
-branch::branch()
-{
-    std::cout << "Enter the name of the elf: " ;
-    std::cin >> name ;
-    if ( ( name == "none" ) || ( name == "None" ) ) name = {""} ;
-}
 
-branch * branch::findName (std::string findName )
-{
-    for (int i(0) ; i < this->sizeBranch ; i++ )
+    Branch::Branch(Branch* inParent)
     {
-        if ( (this->children->name) == findName ) return this->children;
-        else
+        parent = inParent;
+    }
+
+    int Branch::getChildrenCount()
+    {
+        return children.size();
+    }
+
+    Branch* Branch::getChildAt(int index)
+    {
+        return children[index];
+    }
+
+    bool Branch::canBeOccupied()
+    {
+        return parent != nullptr;
+    }
+
+    std::string Branch::getElfName()
+    {
+        return elfName;
+    }
+
+    void Branch::occupy(std::string inElfName)
+    {
+        if (elfName == inElfName) return;
+        if (inElfName != "None")
         {
-            for (int j(0) ; j < (this->children->sizeBranch) ; j++ )
+            if (elfName != "None")
             {
-                if ( (this->children->children->name) == findName ) return this->children->children ;
-                this->children->children++;
+                std::cerr << "House already occupied!" << std::endl;
+                return;
+            }
+            if (!canBeOccupied())
+            {
+                std::cerr << "This branch can't be occupied!" << std::endl;
+                return;
+            }
+            elfName = inElfName;
+        }
+    }
+
+    Branch* Branch::getTopBranch()
+    {
+        if (parent == nullptr) return nullptr;
+        if (parent->parent == nullptr) return parent;
+        return parent->getTopBranch();
+    }
+
+    int Branch::countElves()
+    {
+        int count = elfName != "None" ? 1 : 0;
+        for (int i = 0; i < children.size(); ++i)
+        {
+            count += children[i]->countElves();
+        }
+        return count;
+    }
+
+    int Branch::countNeighbors()
+    {
+        Branch* top = getTopBranch();
+        if (top == nullptr) return 0;
+        return top->countElves();
+    }
+
+    Branch* Branch::addChild()
+    {
+        Branch* child = new Branch(this);
+        children.push_back(child);
+        return child;
+    }
+
+    void Branch::occupyChildren()
+    {
+        if (canBeOccupied())
+        {
+            std::string inElfName;
+            std::cout << "Elf name:";
+            std::cin >> inElfName;
+            occupy(inElfName);
+        }
+        for (int i = 0; i < children.size(); ++i)
+        {
+            Branch* child = children[i];
+            child->occupyChildren();
+        }
+    }
+
+    Branch* Branch::findElfBranch(std::string inElfName)
+    {
+        if (elfName == inElfName)
+        {
+            return this;
+        }
+        for (int i = 0; i < children.size(); ++i)
+        {
+            Branch* child = children[i]->findElfBranch(inElfName);
+            if (child != nullptr)
+            {
+                return child;
             }
         }
-        this->children++ ;
+        return nullptr;
     }
-    return (nullptr);
-}
-
-int branch::getCount ()
-{
-    if ( this->parent == nullptr ) return this->parent->sizeBranch ;
-    else this->sizeBranch ;
-}
-
-void branch::setChildrenAndParent()
-{
-    this->sizeBranch = ( rand() % 3 ) + 3 ;
-    this->children = new branch [ this->sizeBranch ] ;
-    for (int i(0); i < (this->sizeBranch) ; i++)
-    {
-        this->children->parent =  nullptr ;
-        this->children->sizeBranch = ( rand() % 2 ) + 2 ;
-        this->children->children = new branch [this->children->sizeBranch] ;
-        for (int k(0) ; k < (this->children->sizeBranch) ; k++ )
-        {
-            this->children->children->parent = this->children->children;
-            this->children->children->children = nullptr;
-            this->children->children++;
-        }
-        this->children++;
-    }
-}

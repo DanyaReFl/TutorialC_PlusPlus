@@ -4,30 +4,31 @@ int main()
 {
 
     srand(time(nullptr));
+    int sizeBigBranch = (rand () % 3 ) + 3 ;
+    int sizeMiddleBranch = (rand () % 2 ) + 2 ;
     std::string findName;
+    Branch *treeElf[5];
 
     std::cout << "Realization of the village of elves" << std::endl;
 
-    branch *tree = new branch [5];
-    for (int i(0) ; i<5 ; i++ )
+    for (auto it : treeElf)
     {
-        tree->setChildrenAndParent();
-        tree++;
+        it = new Branch(nullptr);
+        for ( int i (0) ; i < sizeBigBranch ; i ++ )
+        {
+            Branch BigBranch = it->addChild();
+            for (int j (0) ; j < sizeMiddleBranch ; j ++ )
+            {
+                BigBranch.addChild();
+            }
+        }
+        it->occupyChildren();
     }
 
-    std::cout << "Enter a name to search for the elf: " ;
+    std::cout << "Enter the name of the elf to search for: " ;
     std::cin >> findName ;
 
-    for (int j(0) ; j<5 ; j++ )
-    {
-        branch *find = tree->findName(findName);
-        if ( find == nullptr )
-        {
-            std::cout << "Number of elf neighbors :" << find->getCount() << std::endl;
-            break;
-        }
-        tree++;
-    }
+
 
     return 0;
 }

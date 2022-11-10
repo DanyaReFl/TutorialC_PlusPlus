@@ -1,23 +1,31 @@
 #pragma once
 #include <iostream>
 #include <ctime>
+#include <vector>
 
 
-class branch
+class Branch
 {
+
 private:
-    branch * parent ;
-    branch * children ;
-    std::string name{""};
-    int sizeBranch {0};
+
+    Branch* parent = nullptr;
+    std::vector<Branch*> children;
+    std::string elfName = "None";
+
 public:
 
-    branch();
-
-    branch * findName (std::string findName );
-
-    int getCount ();
-
-    void setChildrenAndParent();
+    Branch(Branch* inParent);
+    Branch* addChild();
+    int getChildrenCount();
+    Branch* getChildAt(int index);
+    bool canBeOccupied();
+    std::string getElfName();
+    void occupy(std::string inElfName);
+    Branch* getTopBranch();
+    int countElves();
+    int countNeighbors();
+    void occupyChildren();
+    Branch* findElfBranch(std::string inElfName);
 
 };
