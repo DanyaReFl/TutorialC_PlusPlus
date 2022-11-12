@@ -1,19 +1,19 @@
 #include "Header.h"
 
 
-    square::square ()
+    Square::Square ()
     {
         colorCentre();
         std::cout << "Enter the edge: " ;
         std::cin >> edge;
     }
 
-    void square::Square()
+    void Square::SquareS()
     {
         std::cout << "The area of the figure: " << edge * edge  << std::endl;
     }
 
-    void square::desShape()
+    void Square::desShape()
     {
         std::cout << "Rectangle describing the shape: width " << edge << " height " << edge << std::endl;
     }

@@ -13,28 +13,28 @@ int main()
         std::cin >> command;
         if (command=="rectangle")
         {
-            rectangle figure ;
+            Rectangle figure ;
             figure.Square();
             figure.desShape();
             break;
         }
         else if (command=="square")
         {
-            square figure;
-            figure.Square();
+            Square figure;
+            figure.SquareS();
             figure.desShape();
             break;
         }
         else if (command=="triangle")
         {
-            triangle figure;
+            Triangle figure;
             figure.Square();
             figure.desShape();
             break;
         }
         else if (command=="circle")
         {
-            circle figure;
+            Circle figure;
             figure.Square();
             figure.desShape();
             break;

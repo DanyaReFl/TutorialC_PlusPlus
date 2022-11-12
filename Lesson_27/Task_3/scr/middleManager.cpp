@@ -1,20 +1,20 @@
 #include "header.h"
 
-middleManager::middleManager()
+MiddleManager::MiddleManager()
 {
     std::cout << "Enter the name of the middle manager: " ;
     std::cin >> name ;
 }
 
-void middleManager::setTask(int id,int numberCommand,int size)
+void MiddleManager::setTask(int id,int numberCommand,int size)
 {
     std::srand(id+numberCommand);
     tasksCount = rand() % (size + 1);
     std::cout << "Manager "<< this->name <<" got to work." << std::endl;
 }
 
-int middleManager::getTaskCount () { return tasksCount ; }
+int MiddleManager::getTaskCount () { return tasksCount ; }
 
-int middleManager::getFreeEmployee(){return freeEmployeeNumber ; }
+int MiddleManager::getFreeEmployee(){return freeEmployeeNumber ; }
 
-void middleManager::setFreeEmployee(int free){ freeEmployeeNumber = free ; }
+void MiddleManager::setFreeEmployee(int free){ freeEmployeeNumber = free ; }

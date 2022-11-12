@@ -12,8 +12,8 @@ int main()
     std::cin >> numberTeam ;
 
     HeadCompany head;
-    middleManager manager[numberCommands] ;
-    subordinates people[numberCommands][numberTeam] ;
+    MiddleManager manager[numberCommands] ;
+    Subordinates people[numberCommands][numberTeam] ;
 
     do
     {

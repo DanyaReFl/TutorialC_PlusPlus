@@ -1,7 +1,7 @@
 #include "Header.h"
 
 
-    rectangle::rectangle()
+    Rectangle::Rectangle()
     {
         colorCentre();
         std::cout << "Enter the width: " ;
@@ -10,12 +10,12 @@
         std::cin >> height;
     }
 
-    void rectangle::Square()
+    void Rectangle::Square()
     {
         std::cout << "The area of the figure: " << width * height  << std::endl;
     }
 
-    void rectangle::desShape()
+    void Rectangle::desShape()
     {
         std::cout << "Rectangle describing the shape: width " << width << " height " << height << std::endl;
     }

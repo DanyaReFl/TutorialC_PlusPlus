@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 
-enum task
+enum Task
 {
     none ,
     A ,
@@ -9,7 +9,7 @@ enum task
     C
 };
 
-class middleManager;
+class MiddleManager;
 
 class HeadCompany
 {
@@ -21,11 +21,11 @@ public:
 
     int getInstructions();
 
-    bool getAllTask(int size , middleManager *man , int people);
+    bool getAllTask(int size , MiddleManager *man , int people);
 
 };
 
-class middleManager
+class MiddleManager
 {
 private:
     std::string name ;
@@ -33,7 +33,7 @@ private:
     int freeEmployeeNumber{0};
 public:
 
-    middleManager();
+    MiddleManager();
 
     void setTask(int id,int numberCommand,int size);
 
@@ -45,14 +45,14 @@ public:
 
 };
 
-class subordinates
+class Subordinates
 {
 private:
     std::string name;
-    task subTask{none};
+    Task subTask{none};
 public:
 
-    subordinates();
+    Subordinates();
 
     void setSubTask ();
 

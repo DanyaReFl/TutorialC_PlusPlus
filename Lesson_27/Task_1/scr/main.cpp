@@ -4,29 +4,41 @@ int main()
 {
 
     srand(time(nullptr));
-    int sizeBigBranch = (rand () % 3 ) + 3 ;
-    int sizeMiddleBranch = (rand () % 2 ) + 2 ;
+    int sizeBigBranch = ( rand () % 3 ) + 3 ;
+    int sizeMiddleBranch = ( rand () % 2 ) + 2 ;
+    unsigned short const SIZE = 5 ;
     std::string findName;
-    Branch *treeElf[5];
-
     std::cout << "Realization of the village of elves" << std::endl;
 
-    for (auto it : treeElf)
+    Branch **bigBranch;
+    bigBranch = new Branch*[SIZE];
+
+    for (int i (0) ; i < SIZE ; i ++ )
     {
-        it = new Branch(nullptr);
-        for ( int i (0) ; i < sizeBigBranch ; i ++ )
+        bigBranch[i] = new Branch[sizeBigBranch];
+        for (int j (0) ; j < sizeBigBranch ; j ++ )
         {
-            Branch BigBranch = it->addChild();
-            for (int j (0) ; j < sizeMiddleBranch ; j ++ )
-            {
-                BigBranch.addChild();
-            }
+            for (int k (0) ; k < sizeMiddleBranch ; k ++ ) bigBranch[i][j].addChild();
+            bigBranch[i][j].occupyChildren();
         }
-        it->occupyChildren();
     }
+
 
     std::cout << "Enter the name of the elf to search for: " ;
     std::cin >> findName ;
+
+    for (int i (0) ; i < SIZE ; i ++ )
+    {
+        for (int j(0); j < sizeBigBranch; j++)
+        {
+            Branch *findBranch = bigBranch[i][j].findElfBranch(findName);
+            if (findBranch != nullptr)
+            {
+                std::cout << findBranch->countNeighbors();
+                break;
+            }
+        }
+    }
 
 
 

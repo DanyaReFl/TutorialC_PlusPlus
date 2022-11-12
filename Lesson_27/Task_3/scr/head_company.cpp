@@ -15,7 +15,7 @@ int HeadCompany::getInstructions()
     return number;
 }
 
-bool HeadCompany::getAllTask(int size , middleManager *man , int people )
+bool HeadCompany::getAllTask(int size , MiddleManager *man , int people )
 {
     int sumTask{0};
     for (int i (0) ; i < size ; i++ )

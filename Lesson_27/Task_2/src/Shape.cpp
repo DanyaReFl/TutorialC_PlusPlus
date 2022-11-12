@@ -1,6 +1,6 @@
 #include "Header.h"
 
-void shape::colorCentre()
+void Shape::colorCentre()
 {
     int number;
     while (true)

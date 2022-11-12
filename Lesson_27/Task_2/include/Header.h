@@ -2,7 +2,7 @@
 #include <iostream>
 #include <cmath>
 
-struct centre
+struct Centre
 {
     double x;
     double y;
@@ -19,31 +19,31 @@ enum Color
     purple
 };
 
-class shape
+class Shape
 {
 public:
-    centre centreShape;
+    Centre centreShape;
     Color colorShape;
     void colorCentre();
 };
 
-class circle : public shape {
+class Circle : public Shape {
 private:
     double radius;
 public:
-    circle();
+    Circle();
 
     void Square();
 
     void desShape();
 };
 
-class rectangle : public shape {
+class Rectangle : public Shape {
 private:
     double width;
     double height;
 public:
-    rectangle();
+    Rectangle();
 
     void Square();
 
@@ -51,25 +51,25 @@ public:
 
 };
 
-class square : public shape {
+class Square : public Shape {
 private:
     double edge;
 public:
 
-    square ();
+    Square ();
 
-    void Square();
+    void SquareS();
 
     void desShape();
 
 };
 
-class triangle : public shape {
+class Triangle : public Shape {
 private:
     double edge;
 public:
 
-    triangle ();
+    Triangle ();
 
     void Square();
 
