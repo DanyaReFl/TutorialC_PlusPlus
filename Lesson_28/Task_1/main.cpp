@@ -32,15 +32,19 @@ int main()
         }while( speed <= 0 );
         namesSpeed.insert(std::make_pair(name,speed));
     }
-    std::vector<int> time{1,1,1,1,1,1};
     std::map<std::string, double>::iterator it = namesSpeed.begin();
-    std::thread Swimmer_1( Swimming_1 , it->second , it->first , &time[0] ) ; it++;
-    std::thread Swimmer_2( Swimming_1 , it->second , it->first , &time[1] ) ; it++;
-    std::thread Swimmer_3( Swimming_1 , it->second , it->first , &time[2] ) ; it++;
-    std::thread Swimmer_4( Swimming_1 , it->second , it->first , &time[3] ) ; it++;
-    std::thread Swimmer_5( Swimming_1 , it->second , it->first , &time[4] ) ; it++;
-    std::thread Swimmer_6( Swimming_1 , it->second , it->first , &time[5] ) ; it++;
-    Swimmer_1.join(); Swimmer_2.join(); Swimmer_3.join(); Swimmer_4.join(); Swimmer_5.join(); Swimmer_6.join();
+    std::vector<int> time{1,1,1,1,1,1};
+
+    std::vector<std::thread> swims;
+    for (uint8_t i = 0; i < SIZE; i++)
+    {
+        swims.emplace_back(Swimming_1 , it->second , it->first , &time[0]);
+        it++;
+    }
+
+    for (uint8_t i = 0; i < SIZE; i++)
+        swims.at(i).join();
+
     std::sort(time.begin(),time.end());
     std::cout << std::endl;
     for (auto it : time)
