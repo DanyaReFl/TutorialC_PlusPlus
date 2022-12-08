@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.23)
-project(Task_1)
+project(Task_3)
 
 set(CMAKE_CXX_STANDARD 17)
 
@@ -12,5 +12,5 @@ include(FetchContent)
 FetchContent_Declare(cpr GIT_REPOSITORY https://github.com/whoshuu/cpr.git GIT_TAG c8d33915dbd88ad6c92b258869b03aba06587ff9)
 FetchContent_MakeAvailable(cpr)
 
-add_executable(Task_1 main.cpp)
-target_link_libraries(Task_1 PRIVATE cpr::cpr)
+add_executable(Task_3 main.cpp)
+target_link_libraries(Task_3 PRIVATE cpr::cpr)
