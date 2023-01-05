@@ -5,7 +5,7 @@ class shared_ptr_toy
 {
 private:
     Toy *object;
-    static int count ;
+    static uint8_t count ;
 public:
     explicit shared_ptr_toy();
     explicit shared_ptr_toy(std::string name);
