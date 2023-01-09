@@ -5,8 +5,9 @@ class shared_ptr_toy
 {
 private:
     Toy *object;
-    static uint8_t count ;
+    size_t count;
 public:
+
     explicit shared_ptr_toy();
     explicit shared_ptr_toy(std::string name);
     shared_ptr_toy& operator=(const shared_ptr_toy& other);
@@ -16,4 +17,6 @@ public:
     static Toy& make_shared_toy(Toy& OtherToy);
     Toy* operator->();
 };
+
+
 

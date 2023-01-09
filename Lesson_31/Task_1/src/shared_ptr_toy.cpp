@@ -4,15 +4,15 @@
 shared_ptr_toy::shared_ptr_toy()
 {
     object = new Toy;
-    count=0;
     std::cout << "Constructor shared_ptr_toy" << std::endl;
+    count=1;
 }
 
 shared_ptr_toy::shared_ptr_toy(std::string name)
 {
     object = new Toy(std::move(name));
-    count=0;
     std::cout << "Constructor shared_ptr_toy" << std::endl;
+    count=1;
 }
 
 shared_ptr_toy& shared_ptr_toy::operator=(const shared_ptr_toy& other)
@@ -21,16 +21,14 @@ shared_ptr_toy& shared_ptr_toy::operator=(const shared_ptr_toy& other)
     if (this==&other) return *this;
     if (object!= nullptr) delete object;
     object = new Toy (*other.object);
-    count++;
-    std::cout << "Count: " << count << std::endl;
+    count=other.count+1;
     return *this;
 }
 
 shared_ptr_toy::shared_ptr_toy(const shared_ptr_toy& other):object(other.object)
 {
     std::cout << "Copy constructor shared_ptr_toy" << std::endl;
-    count++;
-    std::cout << "Count: " << count << std::endl;
+    count=other.count+1;
 }
 
 shared_ptr_toy::~shared_ptr_toy()
@@ -41,7 +39,6 @@ shared_ptr_toy::~shared_ptr_toy()
         delete[] object;
     }
     else count--;
-    std::cout << "Count: " << count << std::endl;
 }
 
 Toy& shared_ptr_toy::make_shared_toy(std::string nameToy)

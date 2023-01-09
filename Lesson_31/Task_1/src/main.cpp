@@ -1,5 +1,6 @@
-#include "shared_ptr_toy.h"
 #include "Toy.h"
+#include "shared_ptr_toy.h"
+
 
 int main()
 {
@@ -9,7 +10,7 @@ int main()
     Toy e4 = shared_ptr_toy::make_shared_toy("Bear");
     shared_ptr_toy e5 = e2;
     shared_ptr_toy e6 (e5);
-    shared_ptr_toy e7 ("lala");
+    shared_ptr_toy e7 ("Yula");
     e5=e7;
     std::cout << e2->getName() << std::endl;
     std::cout << e5->getName() << std::endl;
