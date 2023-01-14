@@ -2,6 +2,9 @@ syntax = "proto2";
 
 message Record
 {
-  required string name = 1;
-  optional int32 age = 2;
+  required int32 creationYear = 1;
+  required string legalAddress = 2;
+  required string nameOrganization = 3;
+  optional string activityType = 4;
+  optional bool activityForeignEconomic = 5;
 }
