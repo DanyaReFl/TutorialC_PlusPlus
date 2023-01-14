@@ -1,0 +1,7 @@
+syntax = "proto2";
+
+message Record
+{
+  required string name = 1;
+  optional int32 age = 2;
+}

@@ -2,3 +2,6 @@
 .idea
 cmake-build-debug
 nlohmann_json
+bin
+include
+readme.txt
