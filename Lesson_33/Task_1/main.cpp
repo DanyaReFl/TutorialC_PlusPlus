@@ -1,5 +1,6 @@
 #include <iostream>
 #include <map>
+#include "boost/asio.hpp"
 
 void addBasketShopping(const std::map<std::string,int> &store , std::map<std::string,int> &current ) {
     std::string productName;
@@ -65,6 +66,10 @@ void removeBasketShopping(const std::map<std::string,int> &store , std::map<std:
 
 int main() {
 
+    boost::asio::io_context io;
+    boost::asio::steady_timer t(io , boost::asio::chrono::seconds(5));
+    t.wait();
+    
     const std::map<std::string,int> storeBasketShopping = { {"ball",3 } , {"teddy bear",2} , {"candies",10} ,{"toy car",2}};
     std::map<std::string,int> currentBasketShopping;
     std::string commandShop;
