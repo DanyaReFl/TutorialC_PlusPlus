@@ -1,0 +1,19 @@
+# ninja log v5
+3	191	6981025621450335	Task_2_autogen/timestamp	b0f041e1c9dd26dd
+3	191	6981025621450335	Task_2_autogen/mocs_compilation.cpp	b0f041e1c9dd26dd
+3	191	6981025621450335	D:/DDA/TutorialC/Lesson_37/Task_2/build-Task_2-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/Task_2_autogen/timestamp	b0f041e1c9dd26dd
+60	122	6981054292455492	CMakeFiles/Task_2.dir/Task_2_autogen/EWIEGA46WW/qrc_qml.cpp.obj	ed6509e23d5f1e31
+3	191	6981025621450335	D:/DDA/TutorialC/Lesson_37/Task_2/build-Task_2-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/Task_2_autogen/mocs_compilation.cpp	b0f041e1c9dd26dd
+8	60	6981054291805441	Task_2_autogen/EWIEGA46WW/qrc_qml.cpp	99c5c461358e0f95
+8	60	6981054291805441	D:/DDA/TutorialC/Lesson_37/Task_2/build-Task_2-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/Task_2_autogen/EWIEGA46WW/qrc_qml.cpp	99c5c461358e0f95
+246	303	6981025623522841	CMakeFiles/Task_2.dir/Task_2_autogen/mocs_compilation.cpp.obj	2e45de74fb649f77
+249	1955	6981025639995322	CMakeFiles/Task_2.dir/main.cpp.obj	34e79b3952d3ce2
+122	271	6981054293905575	Task_2.exe	c26ef9cd7e968c54
+9	61	6981054352535413	Task_2_autogen/EWIEGA46WW/qrc_qml.cpp	99c5c461358e0f95
+9	61	6981054352535413	D:/DDA/TutorialC/Lesson_37/Task_2/build-Task_2-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/Task_2_autogen/EWIEGA46WW/qrc_qml.cpp	99c5c461358e0f95
+61	124	6981054353195690	CMakeFiles/Task_2.dir/Task_2_autogen/EWIEGA46WW/qrc_qml.cpp.obj	ed6509e23d5f1e31
+125	276	6981054354655537	Task_2.exe	c26ef9cd7e968c54
+9	61	6981054515082342	Task_2_autogen/EWIEGA46WW/qrc_qml.cpp	99c5c461358e0f95
+9	61	6981054515082342	D:/DDA/TutorialC/Lesson_37/Task_2/build-Task_2-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/Task_2_autogen/EWIEGA46WW/qrc_qml.cpp	99c5c461358e0f95
+61	123	6981054515732397	CMakeFiles/Task_2.dir/Task_2_autogen/EWIEGA46WW/qrc_qml.cpp.obj	ed6509e23d5f1e31
+124	270	6981054517122487	Task_2.exe	c26ef9cd7e968c54

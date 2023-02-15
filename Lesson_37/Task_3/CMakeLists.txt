@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.24)
-project(Task_2)
+project(Task_3)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_AUTOMOC ON)
@@ -14,8 +14,8 @@ find_package(Qt5 COMPONENTS
         Widgets
         REQUIRED)
 
-add_executable(Task_2 main.cpp untitled.ui callerMainWindow.h)
-target_link_libraries(Task_2
+add_executable(Task_3 main.cpp remoteController.ui Controller.h)
+target_link_libraries(Task_3
         Qt5::Core
         Qt5::Gui
         Qt5::Widgets

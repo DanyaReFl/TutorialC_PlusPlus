@@ -1,0 +1,19 @@
+{
+	"BUILD_DIR" : "D:/DDA/TutorialC/Lesson_37/Task_2/build-Task_2-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/Task_2_autogen",
+	"CMAKE_BINARY_DIR" : "D:/DDA/TutorialC/Lesson_37/Task_2/build-Task_2-Desktop_Qt_5_15_2_MinGW_64_bit-Debug",
+	"CMAKE_CURRENT_BINARY_DIR" : "D:/DDA/TutorialC/Lesson_37/Task_2/build-Task_2-Desktop_Qt_5_15_2_MinGW_64_bit-Debug",
+	"CMAKE_CURRENT_SOURCE_DIR" : "D:/DDA/TutorialC/Lesson_37/Task_2/Task_2",
+	"CMAKE_SOURCE_DIR" : "D:/DDA/TutorialC/Lesson_37/Task_2/Task_2",
+	"INCLUDE_DIR" : "D:/DDA/TutorialC/Lesson_37/Task_2/build-Task_2-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/Task_2_autogen/include",
+	"INPUTS" : [ "D:/DDA/TutorialC/Lesson_37/Task_2/Task_2/main.qml" ],
+	"LOCK_FILE" : "D:/DDA/TutorialC/Lesson_37/Task_2/build-Task_2-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/CMakeFiles/Task_2_autogen.dir/AutoRcc_qml_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : false,
+	"OPTIONS" : [ "-name", "qml" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_qml.cpp",
+	"RCC_EXECUTABLE" : "C:/Qt/5.15.2/mingw81_64/bin/rcc.exe",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "D:/DDA/TutorialC/Lesson_37/Task_2/build-Task_2-Desktop_Qt_5_15_2_MinGW_64_bit-Debug/CMakeFiles/Task_2_autogen.dir/AutoRcc_qml_EWIEGA46WW_Used.txt",
+	"SOURCE" : "D:/DDA/TutorialC/Lesson_37/Task_2/Task_2/qml.qrc",
+	"VERBOSITY" : 0
+}
