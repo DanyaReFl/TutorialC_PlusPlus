@@ -5,3 +5,5 @@ nlohmann_json
 bin
 include
 readme.txt
+build-RedButton-Desktop_Qt_5_15_2_GCC_64bit-Debug
+build-RedButton-Desktop_Qt_6_6_0_GCC_64bit-Debug
