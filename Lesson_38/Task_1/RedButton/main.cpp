@@ -34,8 +34,8 @@ RedButton::RedButton(QWidget *parent){
     setParent(parent);
     setToolTip("STOP");
     setSizePolicy(QSizePolicy::Fixed,QSizePolicy::Fixed);
-    mButtonUpPixmap_ = QPixmap("/home/reflex/Downloads/Up.png");
-    mButtonDownPixmap_ = QPixmap("/home/reflex/Downloads/Down.png");
+    mButtonUpPixmap_ = QPixmap("/reflex/Downloads/Up.png");
+    mButtonDownPixmap_ = QPixmap("/reflex/Downloads/Down.png");
     mCurrentButtonPixmap_ = mButtonUpPixmap_;
     setGeometry(mCurrentButtonPixmap_.rect());
     connect(this,&QPushButton::clicked,this,&RedButton::setDown);
@@ -76,7 +76,7 @@ int main(int argc, char **argv)
     buttonSong.setFixedSize(200,200);
     buttonSong.move(200,400);
     auto *player = new QMediaPlayer;
-    player->setMedia(QUrl::fromLocalFile("/home/reflex/Downloads/Song.mp3"));
+    player->setMedia(QUrl::fromLocalFile("/reflex/Downloads/Song.mp3"));
     QObject::connect(&buttonSong,&QPushButton::clicked,player,&QMediaPlayer::play);
     buttonSong.show();
     return app.exec();
