@@ -10,3 +10,5 @@ readme.txt
 *-Desktop_Qt_5_15_2_GCC_64bit-Profile
 *-Desktop_Qt_6_6_0_GCC_64bit-Profile
 .gitignore
+CMakeLists.txt.user
+qml.qrc
