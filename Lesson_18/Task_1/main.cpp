@@ -12,17 +12,17 @@ void swapVec(std::vector<int> &a , int *b)
 
 int main() {
 
-    std::vector<int> a = {1,2,3,4};
+    std::vector<int> a = {1,2,3,4,2,3};
 
-    int b[] = {2,4,6,8};
+    int b[] = {2,4,6,8,6,9};
 
     swapVec(a,b);
 
-    for(int i = 0; i < 4; ++i) std::cout << a[i];
+    for(int i = 0; i < 6; ++i) std::cout << a[i];
 
     std::cout << std::endl;
 
-    for(int i = 0; i < 4; ++i) std::cout << b[i];
+    for(int i = 0; i < 6; ++i) std::cout << b[i];
 
     return 0;
 }
